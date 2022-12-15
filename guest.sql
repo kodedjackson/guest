@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 14, 2022 at 11:56 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Host: 127.0.0.1
+-- Generation Time: Dec 15, 2022 at 06:41 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `guest`
+-- Database: `guest_book`
 --
 
 -- --------------------------------------------------------
@@ -28,15 +28,22 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `guest` (
-  `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `check_in` varchar(255) NOT NULL,
   `check_out` varchar(255) NOT NULL,
-  `phone_num` varchar(10) NOT NULL,
+  `phone_num` varchar(50) NOT NULL,
   `room_type` varchar(255) NOT NULL,
   `room_num` int(10) NOT NULL,
   `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `guest`
+--
+
+INSERT INTO `guest` (`name`, `id`, `check_in`, `check_out`, `phone_num`, `room_type`, `room_num`, `email`) VALUES
+('Jackson Jackson', 1, '2022-12-16', '2022-12-22', '08022761322', 'Presidential Suit', 100, 'kodedjackson@gmail.comjke');
 
 --
 -- Indexes for dumped tables
@@ -56,7 +63,7 @@ ALTER TABLE `guest`
 -- AUTO_INCREMENT for table `guest`
 --
 ALTER TABLE `guest`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
