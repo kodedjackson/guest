@@ -31,12 +31,18 @@ main .col .row{
 }
 
 main .booking_details{
-    height: 400px;
     background: #fff;
     margin: 20px 150px;
     border-radius: 10px;
+    max-height: 400px;
+    overflow-y: auto;
 
 }
+
+main .booking_details::-webkit-scrollbar{
+    display: none;
+}
+
 main .table table{
     justify-content: space-between;
     width: 100%;
@@ -62,9 +68,6 @@ main .table table tbody{
 }
 
 
-main .col .row .fa-hotel{
-    color: orangered;
-}
 main .table table tbody td button{
     font-size: 16px;
     padding: 10px;
